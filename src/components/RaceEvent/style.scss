@@ -1,0 +1,144 @@
+@import "styles/variable";
+
+.race-event {
+  &-link {
+    text-decoration: none;
+    color: $font-color-base;
+
+    &.horizontal {
+      display: flex;
+
+      .race-event-banner {
+        width: 50%;
+        max-width: 400px;
+        flex-shrink: 0;
+      }
+
+      .race-event-info {
+        padding-left: $padding-lg;
+      }
+    }
+
+    &:hover {
+      color: $font-color-base;
+    }
+  }
+
+  &-banner {
+    position: relative;
+    margin-bottom: $margin-sm;
+
+    img {
+      display: block;
+      border-radius: $border-radius-base;
+    }
+  }
+
+  &-medal {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: $padding-sm;
+    text-transform: uppercase;
+    color: $white;
+    background-color: $red;
+    opacity: 0.9;
+    border-radius: 20px;
+    font-size: $font-size-sm - 1;
+    font-weight: bold;
+  }
+
+  &-title {
+    font-weight: bold;
+    margin-bottom: $margin-sm;
+  }
+
+  &-date {
+    font-size: $font-size-sm;
+  }
+
+  .tags {
+    margin-top: $margin-md;
+    margin-left: -$margin-sm;
+    margin-right: -$margin-sm;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    padding: $padding-sm 9px;
+    border: solid 1px $gray;
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    margin: 0 $margin-sm $margin-sm;
+    font-size: $font-size-sm;
+
+    img {
+      width: auto;
+      margin-right: $margin-sm;
+      height: 11px;
+    }
+  }
+
+  &.medal {
+    display: flex;
+
+    .race-event-banner {
+      width: 84px;
+      max-width: 84px;
+    }
+
+    .race-event-info {
+      margin-left: $margin-md;
+      color: $gray2;
+      font-size: $font-size-sm - 1;
+    }
+
+    .race-event-title {
+      color: $black;
+      line-height: 20px;
+      font-size: $font-size-base;
+      margin: 0;
+    }
+
+    .race-event-medal {
+      display: none;
+    }
+
+    .tags {
+      margin: 0;
+    }
+
+    .tag {
+      border: none;
+      padding: 0;
+      margin: 0;
+      margin-right: $margin-md;
+
+      &:last-child {
+        flex: 1 0 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $screen-md - 1) {
+  .race-event {
+    &:not(.medal) {
+      .race-event-link.horizontal {
+        display: block;
+
+        .race-event-banner {
+          width: 100%;
+          max-width: 100%;
+          flex-shrink: 0;
+        }
+
+        .race-event-info {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}

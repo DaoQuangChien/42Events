@@ -1,0 +1,33 @@
+@import "styles/variable";
+
+.section-event {
+  padding: $padding-lg 0;
+  border-bottom: solid 1px $gray;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &-title {
+    font-weight: bold;
+    font-size: $font-size-md;
+
+    &.large {
+      font-size: $font-size-lg;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-slider {
+    margin-left: -$margin-md;
+    margin-right: -$margin-md;
+  }
+
+  .slick-slide {
+    padding: $padding-md;
+  }
+}

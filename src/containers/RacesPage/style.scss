@@ -1,0 +1,75 @@
+@import "styles/variable";
+
+.filter {
+  display: flex;
+  padding-bottom: $padding-sm + 4px;
+  border-bottom: solid 1px $gray;
+
+  &-wrapper {
+    margin-right: $margin-md;
+    flex-shrink: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.sort-title {
+  margin: 0;
+}
+
+.select-option {
+  &-title {
+    font-weight: bold;
+    margin-bottom: $margin-sm;
+  }
+
+  &-subtitle {
+    color: $gray2;
+    margin: 0;
+    font-size: $font-size-sm;
+  }
+}
+
+.events {
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    padding: $padding-md 0;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &-count {
+    font-weight: bold;
+    font-size: $font-size-md;
+  }
+
+  &-loading {
+    padding: $padding-lg;
+    text-align: center;
+  }
+
+  &-container {
+    .race-event {
+      padding: $padding-lg 0;
+    }
+  }
+
+  .switch-mode {
+    display: flex;
+
+    p {
+      margin-right: $margin-md;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-md - 1) {
+  .filter {
+    overflow-x: scroll;
+  }
+}

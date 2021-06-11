@@ -1,0 +1,81 @@
+@import "variable";
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.container {
+  max-width: $max-with-app;
+  margin: auto;
+  padding: 43px $padding-md;
+}
+
+.select-overlay.selection-list {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $blur-black;
+  z-index: 100;
+
+  &.hide {
+    display: none;
+  }
+}
+
+.slick-arrow {
+  top: 85px;
+  width: 43px;
+  z-index: 9;
+
+  &::before {
+    content: none;
+  }
+}
+
+.slick-disabled {
+  display: none !important;
+}
+
+.slick-next {
+  right: -10px;
+}
+
+.slick-prev {
+  left: -10px;
+}
+
+.page-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: $font-size-sm;
+  padding: $padding-lg 0;
+
+  a {
+    color: $gray2;
+  }
+
+  span {
+    margin: 0 $margin-sm;
+  }
+}
+
+@media screen and (min-width: $screen-md) {
+  .select-overlay.selection-list {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $screen-md - 1) {
+  .slick-next,
+  .slick-prev {
+    display: none !important;
+  }
+
+  .select-overlay.selection-list.show {
+    display: block;
+  }
+}

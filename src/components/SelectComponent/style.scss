@@ -1,0 +1,134 @@
+@import "styles/variable";
+
+.select {
+  &-container {
+    position: relative;
+    display: inline-flex;
+  }
+
+  &-selected {
+    position: relative;
+    padding: $padding-sm $padding-md;
+    padding-right: $padding-lg;
+    background-color: $gray;
+    border-radius: $border-radius-lg;
+    cursor: pointer;
+
+    &.active {
+      background-color: $red;
+      color: $white;
+
+      &:after {
+        background-image: url("https://s3-ap-southeast-1.amazonaws.com/web42-assets/images/icons/arrow-bottom-gray-2.png");
+      }
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 8px;
+      top: 10px;
+      width: 12px;
+      height: 12px;
+      background: url("https://s3-ap-southeast-1.amazonaws.com/web42-assets/images/icons/arrow-bottom-gray.png")
+        no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &-options-container {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 240px;
+    border-radius: $border-radius-base;
+    background-color: $white;
+    z-index: 101;
+
+    &.hide {
+      display: none;
+    }
+
+    &.show {
+      display: block;
+    }
+
+    .header {
+      display: none;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: $padding-md;
+    }
+
+    li {
+      position: relative;
+      padding: $padding-sm;
+      cursor: pointer;
+
+      &.select-option {
+        font-weight: bold;
+      }
+
+      &:after {
+        content: "";
+        display: none;
+        background: url("https://s3-ap-southeast-1.amazonaws.com/web42-assets/images/activewear/check-red.png")
+          no-repeat;
+        background-size: cover;
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        right: 0;
+        top: 6px;
+      }
+
+      &.selected:after {
+        display: block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $screen-md) {
+  .select-options-container {
+    position: fixed;
+    width: 100% !important;
+    border-radius: 0;
+    top: unset;
+    bottom: 10px;
+    left: 0;
+
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: $padding-md 0;
+      border-bottom: solid 1px $black;
+
+      &-title {
+        font-weight: bold;
+        font-size: $font-size-md;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 100%;
+        text-align: center;
+        font-size: $font-size-md;
+        line-height: 55px;
+      }
+    }
+
+    .select-option {
+      padding: $padding-md;
+    }
+  }
+}

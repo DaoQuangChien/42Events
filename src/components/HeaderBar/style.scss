@@ -1,0 +1,88 @@
+@import "styles/variable";
+
+.header-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1082;
+  background-color: $white;
+  padding: $padding-sm;
+  font-size: $font-size-md;
+  transition: transform 0.3s ease;
+
+  &.up {
+    transform: translate3d(0, 0, 0);
+  }
+
+  &.down {
+    transform: translate3d(0, -100%, 0);
+  }
+
+  &-container {
+    max-width: $max-with-app;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    padding: 0 $padding-md;
+  }
+
+  &-title {
+    font-weight: bold;
+    margin: 0;
+  }
+
+  &-icon {
+    width: 24px;
+    cursor: pointer;
+  }
+}
+
+.menu {
+  &-item {
+    padding: $padding-lg 0;
+
+    &-container {
+      display: flex;
+      align-items: center;
+      color: $font-color-base;
+
+      .ant-select {
+        display: flex;
+
+        &-open {
+          .ant-select-selection-item {
+            color: $font-color-base;
+          }
+        }
+
+        .ant-select-arrow {
+          margin-left: auto;
+          display: flex;
+          align-items: center;
+          right: 0;
+        }
+      }
+    }
+
+    &-title {
+      font-weight: bold;
+      flex-grow: 1;
+    }
+
+    &-prefix-icon {
+      width: 24px;
+      margin-right: $margin-sm;
+    }
+
+    &-suffix-icon {
+      width: auto;
+      height: 16px;
+    }
+  }
+}
+
+.languages-dropdown {
+  width: 145px !important;
+}
