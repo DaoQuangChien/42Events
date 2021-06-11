@@ -11,8 +11,7 @@ const HeaderBar = () => {
   const [scrollDirection] = useScrollDirection();
   const [windowSize] = useWindowSize();
   const [menuPopupVisible, setMenuPopupVisible] = useState(false);
-  const [languageMenuVisible, setLanguageMenuVisible] = useState(false);
-  const [currentLang, setCurrentLang] = useState({
+  const [currentLang] = useState({
     title: "English",
     value: "en_US",
   });
@@ -21,12 +20,6 @@ const HeaderBar = () => {
   };
   const onHideMenuPopup = () => {
     setMenuPopupVisible(false);
-  };
-  const onToggleLanguageMenu = () => {
-    setLanguageMenuVisible(!languageMenuVisible);
-  };
-  const onClickLanguageSelection = (e) => {
-    e.preventDefault();
   };
   const languages = [
     {
@@ -108,9 +101,9 @@ const HeaderBar = () => {
         width={windowSize.isDesktopSize ? 360 : "100%"}
       >
         <div className="menu">
-          {menuItems.map(({ icon, title, suffixItem }, i) => (
+          {menuItems.map(({ icon, title }, i) => (
             <div className="menu-item" key={i}>
-              <a className="menu-item-container" href="#">
+              <p className="menu-item-container">
                 <img className="menu-item-prefix-icon" src={icon} alt={title} />
                 <span className="menu-item-title">{title}</span>
                 <img
@@ -118,7 +111,7 @@ const HeaderBar = () => {
                   src="https://virtual-race-submissions.s3-ap-southeast-1.amazonaws.com/images/-png-dwc05122019-153508"
                   alt="iconArrowRight"
                 />
-              </a>
+              </p>
             </div>
           ))}
           <div className="menu-item menu-item-container">
